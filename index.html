@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owen — Modern Website</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Ballet Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
+
+    <script>
+        if (localStorage.theme === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+    </script>
+
+    <style>
+        .photo-hover {
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        .photo-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+
+        /* Ballet font applied to titles */
+        .ballet-title {
+            font-family: "Ballet", cursive;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition">
+
+    <!-- Navbar -->
+    <nav class="backdrop-blur bg-white/80 dark:bg-gray-800/70 fixed w-full top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <h1 class="text-3xl ballet-title text-blue-600 dark:text-blue-400 tracking-tight">Owen</h1>
+
+            <div class="flex items-center space-x-6">
+                <ul class="hidden md:flex space-x-8 text-lg">
+                    <li><a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About</a></li>
+                    <li><a href="#outfit" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Outfit</a></li>
+                    <li><a href="#dictionary" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Dictionary</a></li>
+                </ul>
+
+                <!-- Dark mode -->
+               
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.getElementById("themeToggle").onclick = () => {
+            const html = document.documentElement;
+            html.classList.toggle("dark");
+            localStorage.theme = html.classList.contains("dark") ? "dark" : "light";
+        };
+    </script>
+
+    <!-- Hero -->
+    <section id="home" class="pt-32 pb-24 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 text-white text-center dark:from-blue-700 dark:via-indigo-700 dark:to-purple-700">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-7xl ballet-title mb-6 drop-shadow-xl">Meet Owen</h2>
+            <p class="text-xl opacity-95">A stylish, modern website — just for him.</p>
+        </div>
+
+        <!-- Main Photo -->
+        <div class="flex justify-center mt-12">
+            <img src="https://eyxhddkoqotedgucpfbz.supabase.co/storage/v1/object/public/website_imgs/Untitled%20design.png"
+                 alt="Owen" 
+                 class="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-xl border-4 border-white/70 dark:border-gray-800/70 photo-hover">
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-24">
+        <h3 class="text-5xl ballet-title mb-10 text-center">About Owen</h3>
+
+        <p class="text-xl max-w-3xl mx-auto text-center leading-relaxed text-gray-600 dark:text-gray-300">
+            Owen is creative, motivated, and always experimenting with new ideas.
+            This site shows off his personality with a clean, bold aesthetic.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8 mt-16">
+            <div class="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-8 text-center hover:shadow-xl transition">
+                <h4 class="text-2xl font-semibold mb-3">Hobbies</h4>
+                <p class="text-gray-600 dark:text-gray-300">Leaning Hard Math Stuff from YouTube and theater</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-8 text-center hover:shadow-xl transition">
+                <h4 class="text-2xl font-semibold mb-3">Skills</h4>
+                <p class="text-gray-600 dark:text-gray-300">Leadership, problem-solving, creativity, and YouTube.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-8 text-center hover:shadow-xl transition">
+                <h4 class="text-2xl font-semibold mb-3">Fun Fact</h4>
+                <p class="text-gray-600 dark:text-gray-300">Probably the coolest <i>Person</i> you know 😎</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Favorite Outfit -->
+    <section id="outfit" class="max-w-6xl mx-auto px-6 py-24">
+        <h3 class="text-5xl ballet-title text-center mb-10">Favorite Outfit</h3>
+
+        <div class="flex flex-col items-center">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQHxZ3LImS3-9s0pJGUjktzxvkPM2pk7ncONHG3rwVbhAU91VsfBnjleJU5wkRVmlG2DzDftiE34ysVl8OC2h_-uVvq7xo5IYlHIYN2_K4TN3bjwfd30FrQ"
+                alt="Favorite outfit"
+                class="w-72 sm:w-80 lg:w-96 object-cover rounded-xl shadow-xl border border-gray-300 dark:border-gray-700 photo-hover"
+            >
+            <p class="text-gray-600 dark:text-gray-300 mt-4 text-lg">
+               Only $1349.25!
+            </p>
+        </div>
+    </section>
+
+    <!-- Dictionary -->
+    <section id="dictionary" class="max-w-6xl mx-auto px-6 py-24">
+        <h3 class="text-5xl ballet-title text-center mb-10">Owen’s Dictionary</h3>
+
+        <div class="space-y-6 mx-auto max-w-3xl">
+
+            <!-- Example entries -->
+            <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow">
+                <h4 class="text-xl font-semibold">The</h4>
+                <p class="text-gray-600 dark:text-gray-300">Definition: the</p>
+            </div>
+
+        </div>
+
+
+</body>
+</html>
